@@ -1,27 +1,23 @@
-// TODO: Do what must be done
+import Button from "./components/button";
+import Count from "./components/count";
+import state from "./state";
 
-// counter.js
-let count = 0;
+const app = document.querySelector("#app");
 
-function updateDisplay() {
-  document.getElementById("count-display").textContent = count;
+function render() {
+  app.innerHTML = `  ${Count(state.getState().count)}
+    <div class="flex justify-center">
+      ${Button("+1", "increment")}
+      ${Button("-1", "decrement")}
+    </div>`;
 }
 
-function setCount(newCount) {
-  count = newCount;
-  updateDisplay();
-}
+state.subscribe(render);
+render();
 
-document.getElementById("increment").addEventListener("click", () => {
-  setCount(count + 1);
+document.addEventListener("click", (event) => {
+  if (event.target.id === "increment")
+    state.setState({ count: state.getState().count + 1 });
+  else if (event.target.id === "decrement")
+    state.setState({ count: state.getState().count - 1 });
 });
-
-document.getElementById("decrement").addEventListener("click", () => {
-  setCount(count - 1);
-});
-
-document.getElementById("reset").addEventListener("click", () => {
-  setCount(0);
-});
-
-updateDisplay(); // Show initial count
