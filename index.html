@@ -12,18 +12,23 @@
   </head>
 
   <!-- TODO: Do what must be done! -->
-  <body class="flex min-h-screen items-center justify-center">
+  <body class="min-h-screen flex-col items-center justify-center bg-slate-900">
     <h1
-      class="m-4 text-2xl font-extrabold text-indigo-500 sm:text-3xl md:text-4xl lg:text-5xl"
+      class="m-4 text-center text-2xl font-extrabold text-indigo-500 sm:text-3xl md:text-4xl lg:text-5xl"
     >
       Reactive Counter
     </h1>
 
-    <div class="flex-col p-8 text-center">
-      <h2>Simple Counter</h2>
-      <div id="count-display">0</div>
-      <button class="btn btn-blue" id="increment">+1</button>
-      <button class="btn btn-blue" id="decrement">-1</button>
+    <div class="flex-col justify-center p-8 text-center text-white">
+      <h2 class="text-xl font-bold">Simple Counter</h2>
+      <div
+        class="m-10 mx-auto max-w-20 rounded bg-slate-600 px-4 py-2 text-2xl font-bold"
+        id="count-display"
+      >
+        0
+      </div>
+      <button class="btn btn-green" id="increment">+1</button>
+      <button class="btn btn-red" id="decrement">-1</button>
       <button class="btn btn-blue" id="reset">Reset</button>
     </div>
     <script src="counter.js"></script>
