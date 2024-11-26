@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- TODO: Update this! -->
-    <title>Vite App</title>
+    <title>Reactive Counter</title>
 
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -16,8 +16,17 @@
     <h1
       class="m-4 text-2xl font-extrabold text-indigo-500 sm:text-3xl md:text-4xl lg:text-5xl"
     >
-      Hello Vite!
+      Reactive Counter
     </h1>
+
+    <div class="flex-col p-8 text-center">
+      <h2>Simple Counter</h2>
+      <div id="count-display">0</div>
+      <button class="btn btn-blue" id="increment">+1</button>
+      <button class="btn btn-blue" id="decrement">-1</button>
+      <button class="btn btn-blue" id="reset">Reset</button>
+    </div>
+    <script src="counter.js"></script>
 
     <script type="module" src="./src/main.js"></script>
   </body>
